@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/gRpc.File.Service/.vs/gRpc.File.Service/FileContentIndex
+/gRpc.File.Service/bin/Debug/net6.0
+/gRpc.File.Service/obj
+/gRPC.File.Service.Client/.vs
+/gRPC.File.Service.Client/bin/Debug/net6.0
+/gRPC.File.Service.Client/obj
+*.user
+/gRpc.File.Service/.vs/gRpc.File.Service/DesignTimeBuild

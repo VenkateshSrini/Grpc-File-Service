@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: grpc-file-deploy
+  name: grpc-file-deploy
+  namespace: grpc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grpc-file-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: grpc-file-deploy
+    spec:
+      volumes:
+      - name: pv-vol
+        persistentVolumeClaim:
+          claimName: pv-file-claim
+      containers:
+      - image: venkateshsrini3/grpc-file-service
+        name: grpc-file-service
+        volumeMounts:
+        - name: pv-vol
+          mountPath: /app/Files
+        ports:
+        - containerPort: 5288
