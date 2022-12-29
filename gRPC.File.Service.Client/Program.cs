@@ -2,22 +2,33 @@
 
 using Google.Protobuf;
 using gRpc.File.Service;
+using Grpc.Core;
 using Grpc.Net.Client;
+using Grpc.Net.Client.Configuration;
 using System.Reflection;
+
 using System.Runtime.CompilerServices;
 using static gRpc.File.Service.FileStreamingService;
 
 class Program
 {
     static string gRpcUrl = "http://localhost:5288";
+    static string dnsURL = "dns:///localhost";
     static async Task Main(string[] args)
     {
 
-        //await FileUpload();
-        await FileDownload();
+        await FileUpload();
+       //await FileDownload();
     }
     static async Task FileUpload()
     {
+        //var channel = GrpcChannel.ForAddress(dnsURL, 
+        //    new GrpcChannelOptions { 
+        //        Credentials = ChannelCredentials.Insecure,
+        //        ServiceConfig = new ServiceConfig { 
+        //            LoadBalancingConfigs = { new RoundRobinConfig() }
+        //        }
+        //    });
         var channel = GrpcChannel.ForAddress(gRpcUrl);
         var client = new FileStreamingServiceClient(channel);
         var contentRootPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);

@@ -11,3 +11,4 @@
 /gRPC.File.Service.Client/obj
 *.user
 /gRpc.File.Service/.vs/gRpc.File.Service/DesignTimeBuild
+/gRpc.File.Service/.vs
