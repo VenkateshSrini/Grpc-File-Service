@@ -15,5 +15,5 @@ spec:
     targetPort: 5288
   selector:
     app: grpc-file-deploy
-  type: LoadBalancer
+  type: NodePort
   externalTrafficPolicy: Local
