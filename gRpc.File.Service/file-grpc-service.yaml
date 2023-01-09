@@ -6,14 +6,15 @@ metadata:
     app: grpc-file-deploy
   name: grpc-file-service
   namespace: grpc
-  annotations:
-    external-dns.alpha.kubernetes.io/hostname: file-cache-grpc-service.grpc.svc.cluster.local
+  #annotations:
+  #  external-dns.alpha.kubernetes.io/hostname: file-cache-grpc-service.grpc.svc.cluster.local
 spec:
   ports:
   - port: 5288
     protocol: TCP
     targetPort: 5288
+    name: grpc-fs
   selector:
     app: grpc-file-deploy
-  type: NodePort
-  externalTrafficPolicy: Local
+  type: ClusterIP
+  #externalTrafficPolicy: Local

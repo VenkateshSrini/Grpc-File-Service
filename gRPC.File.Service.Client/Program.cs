@@ -12,7 +12,8 @@ using static gRpc.File.Service.FileStreamingService;
 
 class Program
 {
-    static string gRpcUrl = "http://localhost:5288";
+    //static string gRpcUrl = "http://localhost:5288";
+    static string gRpcUrl = "http://localhost/file-service";
     static string dnsURL = "dns:///localhost";
     static async Task Main(string[] args)
     {
